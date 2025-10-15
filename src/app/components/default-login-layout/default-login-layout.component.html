@@ -1,8 +1,8 @@
 <main>
     <section class="form-section ">
-        <img src="/assets/svg/logo.svg" alt="MoveIt">
+        <img class="img-logo" src="/assets/svg/logo.svg" alt="MoveIt">
         <h2>{{ title }}</h2>
-        <ng-content select="[selector]"></ng-content>
+        <ng-content></ng-content>
         <div class="btn-wrapper">
             <button 
                 class="btn-primary"
@@ -11,13 +11,31 @@
             >
                 {{ primaryBtnText }}
             </button>
+
+            <div class="dividir">
+                <span>Or continue with</span>
+                <div></div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-google">
+                    <img src="../../../assets/svg/icon-google.svg" alt="">
+                </button>
+                <button class="btn-facebook">
+                    <img src="../../../assets/svg/icon-face.svg" alt="">
+                </button>
+            </div>
             
             <div class="dividir">
                 <div></div>
                 <span>or</span>
                 <div></div>
             </div>
-            <button class="btn-secondary">{{ secondaryBtnText }}</button>
+            
+            <button 
+                class="btn-secondary"
+                (navigate)="submit()"
+            >{{ secondaryBtnText }}</button>
         </div>
     </section>
 
